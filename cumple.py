@@ -14,12 +14,10 @@ def calculate_number_of_persons(number_of_people):
 
 def calculate_median():
     numbers_given = []
-    sum_of_numbers_given = 0
     for _ in range(10000):
         iteration_number = calculate_number_of_persons(20000)
         numbers_given.append(iteration_number)
-    for number in numbers_given:
-        sum_of_numbers_given = sum_of_numbers_given + int(number)
+    sum_of_numbers_given = sum(number for number in numbers_given)
     return sum_of_numbers_given
 
 
