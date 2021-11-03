@@ -12,11 +12,8 @@ def calculate_number_of_persons(number_of_people):
             return person_number
 
 def calculate_median(iterations, number_of_people):
-    numbers_given = []
-    for _ in range(iterations):
-        iteration_number = calculate_number_of_persons(number_of_people)
-        numbers_given.append(iteration_number)
-    sum_of_numbers_given = sum(number for number in numbers_given)
+    sum_of_numbers_given = sum(calculate_number_of_persons(number_of_people) \
+                               for _ in range(iterations))
     median = sum_of_numbers_given / iterations
     return median
 
