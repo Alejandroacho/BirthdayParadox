@@ -1,10 +1,10 @@
 import random
+
 YEAR_DAYS = 365
 
-def calculate_number_of_persons():
-    number_of_persons = 20000
+def calculate_number_of_persons(number_of_people):
     birthdays = []
-    for person_number in range(number_of_persons):
+    for person_number in range(number_of_people):
         person_birthday = random.randint(1, YEAR_DAYS)
         if person_birthday not in birthdays:
             birthdays.append(person_birthday)
@@ -16,7 +16,7 @@ def calculate_median():
     numbers_calculated = []
     pre_median = 0
     for _ in range(10000):
-        iteration_number = calculate_number_of_persons()
+        iteration_number = calculate_number_of_persons(20000)
         numbers_calculated.append(iteration_number)
     for number in numbers_calculated:
         pre_median = pre_median + int(number)
