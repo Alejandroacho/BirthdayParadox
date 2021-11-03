@@ -1,19 +1,16 @@
 import random
+YEAR_DAYS = 365
 
 def calculate_number_of_persons():
     number_of_persons = 20000
-    days = 365
     birthdays = []
-    has_reached = False
-    while not has_reached:
-        for person_number in range(number_of_persons):
-            person_birthday = random.randint(1, days)
-            if person_birthday in birthdays:
-                print(f"Birthday already exists: {person_number}")
-                has_reached = True
-                return person_number
-            elif person_birthday not in birthdays:
-                birthdays.append(person_birthday)
+    for person_number in range(number_of_persons):
+        person_birthday = random.randint(1, YEAR_DAYS)
+        if person_birthday not in birthdays:
+            birthdays.append(person_birthday)
+        elif person_birthday in birthdays:
+            print(f"Birthday already exists: {person_number}")
+            return person_number
 
 def calculate_median():
     numbers_calculated = []
