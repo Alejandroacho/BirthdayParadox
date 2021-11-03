@@ -9,7 +9,6 @@ def calculate_number_of_persons(number_of_people):
         if person_birthday not in birthdays:
             birthdays.append(person_birthday)
         elif person_birthday in birthdays:
-            print(f"Birthday already exists: {person_number}")
             return person_number
 
 def calculate_median(iterations, number_of_people):
