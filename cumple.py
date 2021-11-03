@@ -12,15 +12,14 @@ def calculate_number_of_persons(number_of_people):
             print(f"Birthday already exists: {person_number}")
             return person_number
 
-def calculate_median(iterations):
+def calculate_median(iterations, number_of_people):
     numbers_given = []
     for _ in range(iterations):
-        iteration_number = calculate_number_of_persons(20000)
+        iteration_number = calculate_number_of_persons(number_of_people)
         numbers_given.append(iteration_number)
     sum_of_numbers_given = sum(number for number in numbers_given)
     median = sum_of_numbers_given / iterations
     return median
 
-
-median = calculate_median(10000)
+median = calculate_median(10000, 10000)
 print(f"Median is: {median}")
